@@ -1,4 +1,4 @@
 ccodes
 ======
 
-A bunch of C programs which I randomly wrote at different times.  
+A bunch of C programs which I wrote at different times.  
