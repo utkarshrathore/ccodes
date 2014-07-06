@@ -20,7 +20,7 @@ int push(Stack* s, int e) {
 	} else {
 		s->content[++s->top] = e;
 		printf("\nPush [%d] (top = %d, capacity = %d)", \
-				e, s->top, s->capacity);
+               e, s->top, s->capacity);
 		return 0;
 	}
 }
@@ -35,7 +35,7 @@ int pop(Stack* s) {
 		e = s->content[s->top];
 		s->top--;
 		printf("\nPopped [%d] (top = %d, capacity = %d)", \
-				e, s->top, s->capacity);
+               e, s->top, s->capacity);
 		return e;
 	}
 }
@@ -50,6 +50,10 @@ int isFull(Stack* s) {
 	return (s->top == s->capacity-1)?1:0;
 }
 
+/*
+ * Driver code. Notice the overflow anf undeflow instances
+ * No checking return types but this must be done for serious programs
+ */
 int main() {
 	Stack* s = initStack(4);
 	push(s,2);
