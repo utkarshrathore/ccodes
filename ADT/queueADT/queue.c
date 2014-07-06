@@ -68,7 +68,7 @@ int main() {
 
 	/* Queue operations.
 	   No checking return types but this must be done for serious programs
-     */
+	 */
 	enqueue(q,1);
 	enqueue(q,2);
 	enqueue(q,3);
