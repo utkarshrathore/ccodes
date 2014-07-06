@@ -1,7 +1,4 @@
-#ifndef STACK_H
-#define STACK_H
 #include "stack.h"
-#endif
 
 Stack* initStack(int capacity) {
 	Stack* s = (Stack*) malloc(sizeof(Stack));
@@ -38,7 +35,7 @@ int pop(Stack* s) {
 		e = s->content[s->top];
 		s->top--;
 		printf("\nPopped [%d] (top = %d, capacity = %d)", \
-		       e, s->top, s->capacity);
+			   e, s->top, s->capacity);
 		return e;
 	}
 }

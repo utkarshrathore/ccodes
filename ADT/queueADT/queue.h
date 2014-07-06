@@ -3,6 +3,9 @@
  * Behaviour is undefined for a malformed queue for all operations
  */
  
+#ifndef QUEUE_H
+#define QUEUE_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -37,3 +40,5 @@ extern int isFull(Queue* q);
 extern int queueSize(Queue* q);
 
 // * -> http://bit.ly/1vMWZ34
+
+#endif

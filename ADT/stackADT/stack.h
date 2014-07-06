@@ -3,6 +3,9 @@
  * Behaviour is undefined for a malformed stack for all operations
  */
 
+#ifndef STACK_H
+#define STACK_H
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -35,3 +38,5 @@ extern int isFull(Stack* s);
 extern int stackSize(Stack* s);
 
 // * -> http://bit.ly/1vMWZ34
+
+#endif
