@@ -25,7 +25,7 @@ int enqueue(Queue* q, int e) {
 		q->content[q->rear] = e;
 		q->size++;
 		printf("\nEnqueued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", \
-			   e, q->front, q->rear, q->size, q->capacity);
+				e, q->front, q->rear, q->size, q->capacity);
 		return 0;
 	}
 }
@@ -41,7 +41,7 @@ int dequeue(Queue* q) {
 		q->front = (q->front+1) % (q->capacity);
 		q->size--;
 		printf("\nDequeued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", \
-			   ret, q->front, q->rear, q->size, q->capacity);
+				ret, q->front, q->rear, q->size, q->capacity);
 		return ret;
 	}
 }
@@ -70,7 +70,7 @@ int main() {
 	enqueue(q,2);
 	enqueue(q,3);
 	dequeue(q);
-    dequeue(q);
+	dequeue(q);
 	enqueue(q,5);
 	enqueue(q,6);
 	enqueue(q,7);
