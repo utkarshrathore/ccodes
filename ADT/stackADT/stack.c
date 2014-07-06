@@ -1,4 +1,7 @@
+#ifndef STACK_H
+#define STACK_H
 #include "stack.h"
+#endif
 
 Stack* initStack(int capacity) {
 	Stack* s = (Stack*) malloc(sizeof(Stack));
@@ -19,7 +22,8 @@ int push(Stack* s, int e) {
 		return -1;
 	} else {
 		s->content[++s->top] = e;
-		printf("\nPush [%d] (top = %d, capacity = %d)", e, s->top, s->capacity);
+		printf("\nPush [%d] (top = %d, capacity = %d)", \
+			   e, s->top, s->capacity);
 		return 0;
 	}
 }
@@ -33,7 +37,8 @@ int pop(Stack* s) {
 		int e;
 		e = s->content[s->top];
 		s->top--;
-		printf("\nPopped [%d] (top = %d, capacity = %d)", e, s->top, s->capacity);
+		printf("\nPopped [%d] (top = %d, capacity = %d)", \
+		       e, s->top, s->capacity);
 		return e;
 	}
 }

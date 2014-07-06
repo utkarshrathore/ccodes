@@ -1,16 +1,18 @@
+#ifndef QUEUE_H
+#define QUEUE_H
 #include "queue.h"
+#endif
 
 Queue* initQueue(int capacity) {
-	Queue *q = (Queue*) malloc(sizeof(Queue));
+	Queue* q = (Queue*) malloc(sizeof(Queue));
 	if(q == NULL)  //can't get enough memeory. Bail out of here.
 		return NULL;
-
+	
 	q->content = (int*) malloc(sizeof(int) * capacity);
 	q->front = -1;
 	q->rear = -1;
 	q->size = 0;
 	q->capacity = capacity;
-
 	return q;
 }
 
@@ -20,12 +22,13 @@ int enqueue(Queue* q, int e) {
 		printf("\nOverflow while enqueing [%d] into queue", e);
 		return -1;
 	} else {
-		q->rear=(q->rear+1) % (q->capacity);
+		q->rear = (q->rear+1) % (q->capacity);
 		if (q->front == -1)
 			q->front = q->rear;
-		q->content[q->rear]=e;
+		q->content[q->rear] = e;
 		q->size++;
-		printf("\nEnqueued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", e, q->front, q->rear, q->size, q->capacity);
+		printf("\nEnqueued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", \
+			   e, q->front, q->rear, q->size, q->capacity);
 		return 0;
 	}
 }
@@ -38,9 +41,10 @@ int dequeue(Queue* q) {
 		return ret;
 	} else {
 		ret = q->content[q->front];
-		q->front=(q->front+1) % (q->capacity);
+		q->front = (q->front+1) % (q->capacity);
 		q->size--;
-		printf("\nDequeued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", ret, q->front, q->rear, q->size, q->capacity);
+		printf("\nDequeued [%d] (front = %d, rear = %d, size = %d, capacity = %d)", \
+			   ret, q->front, q->rear, q->size, q->capacity);
 		return ret;
 	}
 }
@@ -61,7 +65,7 @@ int queueSize(Queue* q) {
 }
 
 
-int main()	{
+int main() {
 	Queue* q = initQueue(4);
 
 	/* Queue operations. No checking return types - error messages should do */
